@@ -12,18 +12,21 @@ html body{
   height:630px; 
   text-align:center;
 }
+
 #slider{
   position:absolute;
   left:0;
   height:600px;  
   text-align:left;
 }
+
 #slider > div {
   position:relative;
   float:left;
   width:900px;
   height:600px;
 }
+
 #prev {
   position:relative;
   float: left;
@@ -31,6 +34,7 @@ html body{
   cursor:pointer;
   padding:5px;
 }
+
 #next {
   position:relative;
   float: right;
