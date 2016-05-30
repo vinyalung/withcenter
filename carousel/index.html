@@ -19,36 +19,26 @@
   <span id="prev">&#9664;</span>
   <span id="next">&#9654;</span>
 </div>
-  
-  
 <script>
 var $con = $('#content'), $sli = $('#slider'), $box = $('div',$sli),
     W = $con.width(), N = $box.length, C = 0, inter = 2000, clicked;
     $sli.width(W*N);
-
-
-
 $(document).ready(function(){
     for(i = 0; i < N; i++) {
       $('#bullets').append('<a>&#9898;</a>')
     }
-    
-       
     function changeBullets() {
     for(i = 0; i < N; i++) {
       $('a').eq(i).replaceWith('<a>&#9898;</a>')
     }  
     $('a').eq(C).replaceWith('<a>&#9899;</a>');
     }
-    
- 
     $("a").click(function() {
         clicked = $(this).index();
         do {
           $('#next').click();
         } while( C != clicked);
     });
-
     var interSlide = setInterval(function(){ $('#next').trigger('click') }, inter);
 $('#slider, #prev, #next, a').mouseover(function(){
     clearInterval(interSlide);
@@ -56,11 +46,9 @@ $('#slider, #prev, #next, a').mouseover(function(){
     interSlide = setInterval(function(){ $('#next').trigger('click') }, inter);
  })
 });
-
 $('#prev, #next').click(function(){
   C = (this.id=='next' ? ++C : --C) <0 ? N-1 : C%N;
   $sli.stop().animate({left: -C*W },800);
-
 }); 
 </script>
 </body>
